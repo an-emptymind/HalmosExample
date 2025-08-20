@@ -5,11 +5,19 @@ contract Counter {
     uint256 public number;
 
     function setNumber(uint256 newNumber) public {
-        require(newNumber != 5, "Number cannot be five");
         number = newNumber;
+        if (number==999){
+            overFlow();
+        }
     }
 
     function increment() public {
         number++;
     }
+
+    function overFlow() internal {
+        number = type(uint256).max;
+        number = number +1;
+    }
+
 }
