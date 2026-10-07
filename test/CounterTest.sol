@@ -22,4 +22,14 @@ contract CounterTest is Test, SymTest {
             assert(false);
         }
     }
+
+     function check_increment() public{
+        uint256 newNumber= counter.number();
+        try counter.increment(){
+            assertEq(counter.number(),newNumber+1);
+        }
+        catch{
+            assert(false);
+        }
+    }
 }

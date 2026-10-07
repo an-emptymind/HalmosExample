@@ -18,4 +18,14 @@ contract CounterTest1 is Test {
         counter.setNumber(x);
         assertEq(counter.number(), x);
     }
+
+    function test_increment() public{
+        uint256 newNumber= counter.number();
+        try counter.increment(){
+            assertEq(counter.number(),newNumber+1);
+        }
+        catch{
+            assert(false);
+        }
+    }
 }

@@ -6,7 +6,7 @@ contract Counter {
 
     function setNumber(uint256 newNumber) public {
         number = newNumber;
-        if (number==999){
+        if (number==56468){
             overFlow();
         }
     }
